@@ -9,6 +9,8 @@ frontend/app/config.js
 backend/config.py
 celerybeat-schedule
 celerybeat.pid
+/env
+.pytest_cache
 
 ansible/.password
 ansible/secrets.yaml
@@ -52,4 +54,3 @@ output/*/index.html
 
 # Sphinx
 docs/_build
-
