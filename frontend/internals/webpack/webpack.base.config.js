@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const APP_ROOT = path.join(process.cwd(), 'frontend', 'app')
 const appConfig = require(path.join(APP_ROOT, 'config'))
 const STYLES_ROOT = path.join(APP_ROOT, 'styles')
+const variablesPath = path.join(STYLES_ROOT, '_variables.scss').replace(/\\/g, '/') // Backslash as the path separator doesn't work on scss imports on Windows
 
 process.traceDeprecation = true
 
@@ -54,7 +55,7 @@ module.exports = (options) => ({
               includePaths: [STYLES_ROOT],
               // automatically import variables into every scss file
               data: `@import "~super-skeleton/scss/base/_variables.scss";
-                     @import "${__dirname}/../../app/styles/_variables.scss";
+                     @import "${variablesPath}";
                     `,
             },
           },
